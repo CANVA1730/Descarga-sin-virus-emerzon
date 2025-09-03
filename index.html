@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Launcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Fondo animado */
+        body {
+            background: linear-gradient(-45deg, #0a0a0a, #0f1a2b, #001f3f, #0a0a0a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Contenedor animado */
+        .container {
+            text-align: center;
+            background-color: rgba(10, 25, 50, 0.85);
+            padding: 60px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #1e90ff;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            animation: titlePulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titlePulse {
+            0% {text-shadow: 0 0 10px #1e90ff;}
+            100% {text-shadow: 0 0 30px #1e90ff;}
+        }
+
+        /* Botón moderno */
+        .btn {
+            background: linear-gradient(90deg, #1e90ff, #00bfff);
+            color: #fff;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover::before {
+            top: -10%;
+            left: -10%;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00bfff, 0 0 40px #1e90ff;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 15px 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compitas Launcher</h1>
+        <a class="btn" href="https://drive.google.com/uc?export=download&id=1G0trumbOm77ZsQ-Y46Y3Ea1d2dDINsBS" target="_blank">Descargar</a>
+    </div>
+</body>
+</html>
